@@ -1,5 +1,5 @@
 # Étape 1: Build de l'application avec Maven
-FROM maven:3.9.4-openjdk-17 AS build
+FROM maven:3.9.4-eclipse-temurin-17 AS build
 
 WORKDIR /app
 
@@ -12,7 +12,7 @@ COPY src ./src
 RUN mvn clean package -DskipTests
 
 # Étape 2: Image de production avec JRE
-FROM openjdk:17-jre-slim
+FROM eclipse-temurin:17-jre-alpine
 
 # Créer un utilisateur non-root pour la sécurité
 RUN addgroup --system spring && adduser --system spring --ingroup spring
