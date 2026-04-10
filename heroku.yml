@@ -1,0 +1,19 @@
+build:
+  languages:
+    - java
+  
+run:
+  web: java $JAVA_OPTS -jar target/demo-0.0.1-SNAPSHOT.jar
+  
+setup:
+  addons:
+    - plan: heroku-postgresql
+      as: DATABASE
+  
+env:
+  - variable: SPRING_PROFILES_ACTIVE
+    value: production
+  - variable: SPRING_DATASOURCE_URL
+    value: ${DATABASE_URL}
+  - variable: SPRING_JPA_HIBERNATE_DDL_AUTO
+    value: update
