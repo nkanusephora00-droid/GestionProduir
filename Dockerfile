@@ -18,7 +18,7 @@ FROM eclipse-temurin:17-jre-alpine
 RUN addgroup --system spring && adduser --system spring --ingroup spring
 
 # Copier le JAR compilé
-COPY --from=build /app/target/*.jar app.jar
+COPY --from=build /app/target/demo-0.0.1-SNAPSHOT.jar app.jar
 
 # Créer le répertoire de travail
 WORKDIR /app
