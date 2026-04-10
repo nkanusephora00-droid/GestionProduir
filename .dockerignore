@@ -1,0 +1,56 @@
+# Fichiers et dossiers à exclure de l'image Docker
+
+# Maven
+target/
+!.mvn/wrapper/maven-wrapper.jar
+!**/src/main/**/target/
+!**/src/test/**/target/
+
+# IDE
+.idea/
+*.iws
+*.iml
+*.ipr
+.vscode/
+*.swp
+*.swo
+
+# Système d'exploitation
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+logs/
+
+# Git
+.git/
+.gitignore
+
+# Documentation
+README.md
+docs/
+
+# Tests
+src/test/
+
+# Configuration locale
+application-local.properties
+application-dev.properties
+
+# Docker
+Dockerfile
+docker-compose.yml
+.dockerignore
+
+# Déploiement
+deployment/
+
+# Node (si vous utilisez des outils frontend)
+node_modules/
+npm-debug.log*
+
+# Build tools
+.mvn/
+mvnw
+mvnw.cmd
